@@ -5,10 +5,10 @@ from otree.api import (
 import random
 
 doc = """
-Ultimatum game with two treatments: direct response and strategy method.
-In the former, one player makes an offer and the other either accepts or rejects.
-It comes in two flavors, with and without hypothetical questions about the second player's response to offers other than the one that is made.
-In the latter treatment, the second player is given a list of all possible offers, and is asked which ones to accept or reject.
+El juego "Ultimatum" con 2 características: Respuesta directa y método estratégico.
+En la respuesta directa, un jugador hace una propuesta y el segundo acepta o rechaza.
+Viene en 2 maneras, con y sin preguntas hipotéticas sobre la respuesta del segundo jugador a ofertas distintas a la que se hace.
+En el método estratégico, el segundo jugador recibe una lista de todas las ofertas posibles y se le pregunta cuáles aceptar o rechazar.
 """
 
 
@@ -18,6 +18,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'ultimatum/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
     endowment = c(100)
     payoff_if_rejected = c(0)
@@ -42,18 +44,18 @@ class Subsession(BaseSubsession):
 
 
 def question(amount):
-    return 'Would you accept an offer of {}?'.format(c(amount))
+    return 'Aceptarías una propuesta de {}?'.format(c(amount))
 
 
 class Group(BaseGroup):
     use_strategy_method = models.BooleanField(
-        doc="""Whether this group uses strategy method"""
+        doc="""Si el grupo utiliza el método estrategia"""
     )
 
     amount_offered = models.CurrencyField(choices=Constants.offer_choices)
 
     offer_accepted = models.BooleanField(
-        doc="if offered amount is accepted (direct response method)"
+        doc="Si la oferta es aceptada (direct response method)"
     )
 
     # for strategy method

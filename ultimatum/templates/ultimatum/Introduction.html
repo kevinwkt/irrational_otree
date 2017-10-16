@@ -1,1 +1,16 @@
-{% extends "global/Page.html" %}{% load staticfiles otree %}{% block title %}        Introduction{% endblock %}{% block content %}    {% include Constants.instructions_template %}    <p>            The instructions will remain on your screen for future reference.    </p>    {% next_button %}{% endblock %}
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+{% include Constants.header_template %}
+    <div class="w3-center">
+      Introducción
+    </div>
+{% endblock %}
+{% block content %}
+    {% include Constants.instructions_template %}
+    <p>
+            Por su conveniencia, las instrucciones seguirán en la pantalla por el resto del estudio.
+    </p>
+    {% next_button %}
+    {% include Constants.footer_template %}
+{% endblock %}

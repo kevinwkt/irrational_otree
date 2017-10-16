@@ -1,1 +1,33 @@
-{% extends "global/Page.html" %}{% load staticfiles otree %}{% block title %}        Results{% endblock %}{% block content %}    <p>        {% if player.id_in_group == 1 %}                You were given {{ Constants.endowment }}, out of which you offered {{ group.amount_offered }} to the other player.            {% if group.offer_accepted %}                    Your offer was accepted.            {% else %}                     Your offer was rejected.            {% endif %}        {% else %}                The other player offered you {{ group.amount_offered }} out of the total {{ Constants.endowment }}.            {% if group.offer_accepted %}                    You accepted this offer.            {% else %}                    You rejected this offer.            {% endif %}        {% endif %}    </p>    <p>            Your payoff is therefore {{ player.payoff }}.    </p>    {% next_button %}    {% include Constants.instructions_template %}{% endblock %}
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+{% include Constants.header_template %}
+    <div class="w3-center">
+      Resultados
+    </div>
+{% endblock %}
+{% block content %}
+    <p>
+        {% if player.id_in_group == 1 %}
+                Te han dado {{ Constants.endowment }}, de los cuales ofreciste {{ group.amount_offered }} al otro jugador.
+            {% if group.offer_accepted %}
+                    Tu oferta ha sido aceptada.
+            {% else %}
+                     Tu oferta ha sido rechazada.
+            {% endif %}
+        {% else %}
+                El otro jugador te ofreció {{ group.amount_offered }} de un total de {{ Constants.endowment }}.
+            {% if group.offer_accepted %}
+                    Aceptaste esta oferta.
+            {% else %}
+                    Rechazaste esta oferta.
+            {% endif %}
+        {% endif %}
+    </p>
+    <p>
+            Tu payoff es {{ player.payoff }}.
+    </p>
+    {% next_button %}
+    {% include Constants.instructions_template %}
+    {% include Constants.footer_template %}
+{% endblock %}

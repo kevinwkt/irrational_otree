@@ -1,1 +1,27 @@
-{% extends "global/Page.html" %}{% load staticfiles otree %}{% block title %}        Your role and decision{% endblock %}{% block content %}    <p>        You are the <strong>responder</strong>.    </p>    <p>        The other player has offered you {{ group.amount_offered }}.    </p>    <p><b>Do you wish to accept the offer?</b></p>    <div>        <button name="offer_accepted" value="True" class="btn btn-primary btn-large">            Yes        </button>        <button name="offer_accepted" value="False" class="btn btn-primary btn-large">            No        </button>    </div>    {% include Constants.instructions_template %}{% endblock %}
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+{% include Constants.header_template %}
+    <div class="w3-center">
+      Tu rol y decisión
+    </div>
+{% endblock %}
+{% block content %}
+    <p>
+        Eres el <strong>respondedor</strong>.
+    </p>
+    <p>
+        El otro jugador te ha ofrecido {{ group.amount_offered }}.
+    </p>
+        <p><b>Deseas acceptar la propuesta?</b></p>
+    <div>
+        <button name="offer_accepted" value="True" class="btn btn-primary btn-large">
+            Si
+        </button>
+        <button name="offer_accepted" value="False" class="btn btn-primary btn-large">
+            No
+        </button>
+    </div>
+{% include Constants.instructions_template %}
+{% include Constants.footer_template %}
+{% endblock %}
