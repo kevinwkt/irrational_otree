@@ -11,7 +11,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # the environment variable OTREE_PRODUCTION controls whether Django runs in
 # DEBUG mode. If OTREE_PRODUCTION==1, then DEBUG=False
 
-PRODUCTION=1
 
 if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
     DEBUG = True
@@ -48,7 +47,7 @@ DATABASES = {
 #   of the admin interface, set it to DEMO.
 
 # for flexibility, you can set it in the environment variable OTREE_AUTH_LEVEL
-AUTH_LEVEL = 'STUDY'
+OTREE_AUTH_LEVEL = 'STUDY'
 
 ADMIN_USERNAME = 'irrational'
 # for security, best to set admin password in an environment variable
