@@ -17,6 +17,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'cournot/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
     # Total production capacity of all players
     total_capacity = 60
@@ -52,5 +54,3 @@ class Player(BasePlayer):
 
     def other_player(self):
         return self.get_others_in_group()[0]
-
-

@@ -1,8 +1,10 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-    Results
+<div class="w3-center">
+  Resultados
+</div>
 {% endblock %}
 
 {% block content %}
@@ -29,5 +31,5 @@
     {% next_button %}
 
     {% include Constants.instructions_template %}
-
+    {% include Constants.footer_template %}
 {% endblock %}

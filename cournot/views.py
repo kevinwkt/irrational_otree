@@ -13,11 +13,12 @@ class Decide(Page):
     form_fields = ['units']
 
 
-class ResultsWaitPage(WaitPage):
-    body_text = "Waiting for the other participant to decide."
-
+class MyWaitPage(WaitPage):
+    template_name = 'global/MyWaitPage.html'
     def after_all_players_arrive(self):
         self.group.set_payoffs()
+
+    body_text = "Esperando a que los otros participantes contribuyan."
 
 
 class Results(Page):
@@ -27,6 +28,6 @@ class Results(Page):
 page_sequence = [
     Introduction,
     Decide,
-    ResultsWaitPage,
+    MyWaitPage,
     Results
 ]

@@ -1,8 +1,11 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-    Bid
+{% include Constants.header_template %}
+<div class="w3-center">
+  Bid
+</div>
 {% endblock %}
 
 {% block content %}
@@ -16,10 +19,10 @@
         Please make your bid now. The amount can be between {{ Constants.min_allowable_bid }} and {{ Constants.max_allowable_bid }}, inclusive.
     </p>
 
-    {% formfield player.bid_amount label="Bid amount" %}
+    {% formfield player.bid_amount with label="Bid amount" %}
 
     {% next_button %}
 
     {% include Constants.instructions_template %}
-
+    {% include Constants.footer_template %}
 {% endblock %}

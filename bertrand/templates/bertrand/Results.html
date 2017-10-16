@@ -1,6 +1,11 @@
 {% extends "global/Page.html" %}
-{% load otree %}
-{% block title %}Results{% endblock %}
+{% load otree_tags %}
+{% block title %}
+{% include Constants.header_template %}
+    <div class="w3-center">
+      Resultados
+    </div>
+{% endblock %}
 {% block content %}
 <table class=table style='width: auto'>
     {% for row in table %}
@@ -18,4 +23,5 @@
 
 <p>{% next_button %}</p>
 {% include Constants.instructions_template %}
+{% include Constants.footer_template %}
 {% endblock %}

@@ -17,7 +17,9 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'bargaining/Instructions.html'
-
+    header_template='global/header.html'
+    footer_template='global/footer.html'
+    
     amount_shared = c(100)
 
 

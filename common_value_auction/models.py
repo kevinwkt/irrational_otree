@@ -20,6 +20,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'common_value_auction/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
     min_allowable_bid = c(0)
     max_allowable_bid = c(10)

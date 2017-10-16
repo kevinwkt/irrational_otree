@@ -1,8 +1,11 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-    Decide
+{% include Constants.header_template %}
+<div class="w3-center">
+  Decide
+</div>
 {% endblock %}
 
 {% block content %}
@@ -12,9 +15,9 @@
     You are <strong>{{ player.role }}</strong>. What will you do for the evening?
 </p>
 
-    {% formfield player.decision label='Please make a choice:' %}
+    {% formfield player.decision with label='Please make a choice:' %}
     {% next_button %}
 
     {% include Constants.instructions_template %}
-
+    {% include Constants.footer_template %}
 {% endblock %}

@@ -1,17 +1,20 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-    Set Your Price
+{% include Constants.header_template %}
+<div class="w3-center">
+  Set Your Price
+</div>
 {% endblock %}
 
 {% block content %}
 
-    {% formfield player.price label="Please enter an amount from 0 to 100 as your price" %}
+    {% formfield player.price with label="Please enter an amount from 0 to 100 as your price" %}
 
 
 <p>{% next_button %}</p>
 
     {% include Constants.instructions_template %}
-
+    {% include Constants.footer_template %}
 {% endblock %}

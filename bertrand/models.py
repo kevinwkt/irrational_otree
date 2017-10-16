@@ -20,6 +20,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'bertrand/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
     maximum_price = c(100)
 

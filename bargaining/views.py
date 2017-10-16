@@ -13,9 +13,12 @@ class Request(Page):
     form_fields = ['request_amount']
 
 
-class ResultsWaitPage(WaitPage):
+class MyWaitPage(WaitPage):
+    template_name = 'global/MyWaitPage.html'
     def after_all_players_arrive(self):
         self.group.set_payoffs()
+
+    body_text = "Esperando a que los otros participantes contribuyan."
 
 
 class Results(Page):
@@ -29,6 +32,6 @@ class Results(Page):
 page_sequence = [
     Introduction,
     Request,
-    ResultsWaitPage,
+    MyWaitPage,
     Results,
 ]

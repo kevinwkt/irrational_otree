@@ -21,6 +21,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'battle_of_the_sexes/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
     # """Amount rewarded to husband if football is chosen"""
     football_husband_payoff = opera_wife_payoff = c(300)
@@ -58,7 +60,7 @@ class Player(BasePlayer):
     decision = models.CharField(
         choices=['Football', 'Opera'],
         doc="""Either football or the opera""",
-        widget=widgets.RadioSelect
+        widget=widgets.RadioSelect()
     )
 
     def other_player(self):

@@ -1,9 +1,15 @@
 {% extends "global/Page.html" %}
-{% load otree %}
+{% load otree_tags %}
 
-{% block title %}Introduction{% endblock %}
+{% block title %}
+{% include Constants.header_template %}
+  <div class="w3-center">
+    Introduccion
+  </div>
+{% endblock %}
 
 {% block content %}
 {% include Constants.instructions_template %}
 {% next_button %}
+{% include Constants.footer_template %}
 {% endblock %}
