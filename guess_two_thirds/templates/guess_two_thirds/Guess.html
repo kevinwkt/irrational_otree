@@ -1,22 +1,26 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-    Your Guess
+{% include Constants.header_template %}
+    <div class="w3-center">
+      Tu Elección
+    </div>
 {% endblock %}
 
 {% block content %}
 
     {% if player.round_number > 1 %}
         <p>
-            Here were the two-thirds-average values in previous rounds:
+            Valores promedio de dos tercios en rondas anteriores:
             {{ group.two_thirds_avg_history }}
         </p>
     {% endif %}
 
-    {% formfield player.guess label="Please pick a number from 0 to 100:" %}
+    {% formfield player.guess with label="Elija un número de 0 a 100:" %}
     {% next_button %}
 
     {% include Constants.instructions_template %}
+    {% include Constants.footer_template %}
 
 {% endblock %}

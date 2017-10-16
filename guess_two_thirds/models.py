@@ -23,6 +23,8 @@ class Constants(BaseConstants):
     guess_max = 100
 
     instructions_template = 'guess_two_thirds/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
 
 class Subsession(BaseSubsession):
