@@ -12,24 +12,24 @@
 
     <p>
         {% if player.is_winner %}
-            You won the auction!
+            Has ganado la subasta!
             {% if is_greedy %}
-                However, your bid amount was higher than the actual value of the item. Your payoff is therefore zero.
+              Sin embargo, el monto de su oferta fue mayor que el valor real del artículo. Por lo tanto, su recompensa es cero.
             {% elif player.payoff == 0 %}
-                Your payoff, however, is zero.
+                Tu payoff, sin embargo, es cero.
             {% endif %}
         {% else %}
-            You did not win the auction.
+            No ganaste la subasta.
         {% endif %}
     </p>
 
     <table class="table" style="width:400px">
 
         <tr>
-            <th>Your bid</th>
-            <th>Winning bid</th>
-            <th>Actual value</th>
-            <th>Your payoff</th>
+            <th>Tu oferta</th>
+            <th>Oferta ganadora</th>
+            <th>Valor real</th>
+            <th>Tu payoff</th>
         </tr>
 
     <tr>

@@ -5,12 +5,16 @@ from otree.api import (
 import random
 
 doc = """
+En el juego de "Common Value Auction", los jugadores ofertan en el objeto en cuestión.<br/>
 In a common value auction game, players simultaneously bid on the item being
 auctioned.<br/>
-Prior to bidding, they are given an estimate of the actual value of the item.
-This actual value is revealed after the bidding.<br/>
-Bids are private. The player with the highest bid wins the auction, but
-payoff depends on the bid amount and the actual value.<br/>
+
+Antes de hacer una oferta, se les da una estimación del valor real del artículo.
+Este valor real se revela después de la puja.<br/>
+
+
+Las ofertas son privadas. El jugador con la oferta más alta gana la subastay el payoff
+depende del monto de la oferta y del valor real. <br/>
 """
 
 
@@ -40,7 +44,7 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     item_value = models.CurrencyField(
-        doc="""Common value of the item to be auctioned, random for treatment"""
+        doc="""Valor común del objeto en la subasta, aleatorio por tratamiento"""
     )
 
     highest_bid = models.CurrencyField()
@@ -70,17 +74,17 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     item_value_estimate = models.CurrencyField(
-        doc="""Estimate of the common value, may be different for each player"""
+        doc="""Aproximado del valor común, puede diferir entre jugadores"""
     )
 
     bid_amount = models.CurrencyField(
         min=Constants.min_allowable_bid, max=Constants.max_allowable_bid,
-        doc="""Amount bidded by the player"""
+        doc="""Cantidad ofertada por el jugador"""
     )
 
     is_winner = models.BooleanField(
         initial=False,
-        doc="""Indicates whether the player is the winner"""
+        doc="""Indica si el jugador ha ganado"""
     )
 
     def set_payoff(self):

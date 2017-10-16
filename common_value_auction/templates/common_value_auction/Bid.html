@@ -4,19 +4,19 @@
 {% block title %}
 {% include Constants.header_template %}
 <div class="w3-center">
-  Bid
+  Oferta
 </div>
 {% endblock %}
 
 {% block content %}
 
     <p>
-        The value of the item is estimated to be {{ player.item_value_estimate }}.
-        This estimate may deviate from the actual value by at most {{ Constants.estimate_error_margin }}.
+        El valor del objeto se estima ser {{ player.item_value_estimate }}.
+        Esta estimación puede desviarse del valor real con un margen de {{ Constants.estimate_error_margin }}.
     </p>
 
     <p>
-        Please make your bid now. The amount can be between {{ Constants.min_allowable_bid }} and {{ Constants.max_allowable_bid }}, inclusive.
+        Haga su oferta ahora. El monto puede ser entre {{ Constants.min_allowable_bid }} y {{ Constants.max_allowable_bid }}, inclusivo.
     </p>
 
     {% formfield player.bid_amount with label="Bid amount" %}
