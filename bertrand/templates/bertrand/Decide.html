@@ -4,13 +4,13 @@
 {% block title %}
 {% include Constants.header_template %}
 <div class="w3-center">
-  Set Your Price
+  Fija tu precio
 </div>
 {% endblock %}
 
 {% block content %}
 
-    {% formfield player.price with label="Please enter an amount from 0 to 100 as your price" %}
+    {% formfield player.price with label="Porfavor escriba el monto de 0 a 100 para fijar el precio" %}
 
 
 <p>{% next_button %}</p>

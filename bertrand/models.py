@@ -6,9 +6,9 @@ import random
 
 
 doc = """
-2 firms complete in a market by setting prices for homogenous goods.
+2 compañías compiten en el mercado poniendo precios por bienes homogenuos.
 
-See "Kruse, J. B., Rassenti, S., Reynolds, S. S., & Smith, V. L. (1994).
+Ver "Kruse, J. B., Rassenti, S., Reynolds, S. S., & Smith, V. L. (1994).
 Bertrand-Edgeworth competition in experimental markets.
 Econometrica: Journal of the Econometric Society, 343-371."
 """
@@ -46,10 +46,10 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     price = models.CurrencyField(
         min=0, max=Constants.maximum_price,
-        doc="""Price player chooses to sell product for"""
+        doc="""Precio el jugador elige vender el producto"""
     )
 
     is_a_winner = models.BooleanField(
         initial=False,
-        doc="""Whether this player offered lowest price"""
+        doc="""Si el jugador ofreció el precio mas bajo"""
     )
