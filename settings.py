@@ -15,7 +15,7 @@ OTREE_PRODUCTION=1
 if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
     DEBUG = False
 else:
-    DEBUG = True
+    DEBUG = False
 
 # don't share this with anybody.
 SECRET_KEY = 'a*p+y#o7utsi682-0-4u-^^$_$-*#10f6@74-p6bd6b7%=i91s'
