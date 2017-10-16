@@ -4,7 +4,7 @@
 {% block title %}
 {% include Constants.header_template %}
 <div class="w3-center">
-  Decide
+  Decisión
 </div>
 {% endblock %}
 
@@ -12,10 +12,10 @@
 
 
 <p>
-    You are <strong>{{ player.role }}</strong>. What will you do for the evening?
+    Eres <strong>{{ player.role }}</strong>. ¿Qué harás en la tarde?
 </p>
 
-    {% formfield player.decision with label='Please make a choice:' %}
+    {% formfield player.decision with label='Elija porfavor:' %}
     {% next_button %}
 
     {% include Constants.instructions_template %}

@@ -6,8 +6,8 @@ import random
 
 
 doc = """
-This is a 2-player 2-strategy coordination game. The name and story originated
-from
+Esto es un juego de coordinación para 2 jugadores. El título y juego se originó de
+
 <a href="http://books.google.ch/books?id=uqDDAgAAQBAJ&lpg=PP1&ots=S-DC4LemnS&lr&pg=PP1#v=onepage&q&f=false" target="_blank">
     Luce and Raiffa (1957)
 </a>.
@@ -40,15 +40,15 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     def set_payoffs(self):
-        husband = self.get_player_by_role('husband')
-        wife = self.get_player_by_role('wife')
+        husband = self.get_player_by_role('esposo')
+        wife = self.get_player_by_role('esposa')
 
         if husband.decision != wife.decision:
             husband.payoff = Constants.mismatch_payoff
             wife.payoff = Constants.mismatch_payoff
 
         else:
-            if husband.decision == 'Football':
+            if husband.decision == 'Fútbol':
                 husband.payoff = Constants.football_husband_payoff
                 wife.payoff = Constants.football_wife_payoff
             else:
@@ -58,17 +58,17 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     decision = models.CharField(
-        choices=['Football', 'Opera'],
-        doc="""Either football or the opera""",
+        choices=['Fútbol', 'Opera'],
+        doc="""Fútbol o la opera""",
         widget=widgets.RadioSelect()
     )
 
     def other_player(self):
-        """Returns other player in group"""
+        """Regresa otros jugadores del grupo"""
         return self.get_others_in_group()[0]
 
     def role(self):
         if self.id_in_group == 1:
-            return 'husband'
+            return 'esposo'
         if self.id_in_group == 2:
-            return 'wife'
+            return 'esposa'

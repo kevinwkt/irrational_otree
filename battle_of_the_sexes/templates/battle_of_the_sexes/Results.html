@@ -13,16 +13,16 @@
 
 
 
-{% if player.role == "husband" %}
+{% if player.role == "esposo" %}
 
-    You chose to go to <strong>{{player.decision}}</strong> and Wife chose to go to
-    <strong>{{player.other_player.decision}}</strong>. As a result, your payoff is
+    Escogiste: <strong>{{player.decision}}</strong> y Esposa escogió:
+    <strong>{{player.other_player.decision}}</strong>. Como resultado, tu payoff es
     <strong>{{player.payoff}}</strong>
 
 {% else %}
 
-    You chose to go to <strong>{{player.decision}}</strong> and Husband chose to go to
-    <strong>{{player.other_player.decision}}</strong>. As a result, your payoff is
+    Escogiste: <strong>{{player.decision}}</strong> y Esposo escogió:
+    <strong>{{player.other_player.decision}}</strong>. Como resultado, tu payoff es
     <strong>{{player.payoff}}</strong>.
 
 {% endif %}
