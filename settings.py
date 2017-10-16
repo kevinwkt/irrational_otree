@@ -47,7 +47,7 @@ DATABASES = {
 #   of the admin interface, set it to DEMO.
 
 # for flexibility, you can set it in the environment variable OTREE_AUTH_LEVEL
-OTREE_AUTH_LEVEL = 'STUDY'
+AUTH_LEVEL = 'STUDY'
 
 ADMIN_USERNAME = 'irrational'
 # for security, best to set admin password in an environment variable
