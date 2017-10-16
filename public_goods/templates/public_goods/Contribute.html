@@ -1,16 +1,26 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-    Contribute
+{% include Constants.header_template %}
+  <div class="w3-center">
+    Contribuye
+  </div>
 {% endblock %}
 
 {% block content %}
+    <div class="w3-row">
+      <div class="w3-col s4 m4 l4">
+        {% include Constants.instructions_template %}
+      </div>
+      <div class="w3-col s8 m8 l8">
+        <div style="padding:80px;">
+          {% formfield player.contribution with label="Cuanto quiere contribuir al proyecto (de 0 a 100)?" %}
+          {% next_button %}
+        </div>
+      </div>
+    </div>
 
-    {% formfield player.contribution label="How much will you contribute to the project (from 0 to 100)?" %}
-
-    {% next_button %}
-
-    {% include Constants.instructions_template %}
+    {% include Constants.footer_template %}
 
 {% endblock %}

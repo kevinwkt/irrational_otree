@@ -5,11 +5,13 @@ from .models import Constants
 
 
 class Introduction(Page):
+    currentProgress=0
     """Description of the game: How to play and returns expected"""
     pass
 
 
 class Contribute(Page):
+    currentProgress=50
     """Player: Choose how much to contribute"""
 
     form_model = models.Player
@@ -18,15 +20,17 @@ class Contribute(Page):
     timeout_submission = {'contribution': c(Constants.endowment / 2)}
 
 
-class ResultsWaitPage(WaitPage):
+class MyWaitPage(WaitPage):
+    template_name = 'global/MyWaitPage.html'
     def after_all_players_arrive(self):
         self.group.set_payoffs()
 
-    body_text = "Waiting for other participants to contribute."
+    body_text = "Esperando a que los otros participantes contribuyan."
 
 
 class Results(Page):
-    """Players payoff: How much each has earned"""
+    currentProgress=100
+    """Payoff de los Jugadores: Ganancia de cada Jugador"""
 
     def vars_for_template(self):
         return {
@@ -37,6 +41,6 @@ class Results(Page):
 page_sequence = [
     Introduction,
     Contribute,
-    ResultsWaitPage,
+    MyWaitPage,
     Results
 ]

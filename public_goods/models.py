@@ -5,7 +5,7 @@ from otree.api import (
 import random
 
 doc = """
-This is a one-period public goods game with 3 players.
+Esto es una ronda de Public Goods con 4 jugadores.
 """
 
 
@@ -15,6 +15,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_template = 'public_goods/Instructions.html'
+    header_template='global/header.html'
+    footer_template='global/footer.html'
 
     # """Amount allocated to each player"""
     endowment = c(100)
@@ -40,7 +42,6 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     total_contribution = models.CurrencyField()
-
     individual_share = models.CurrencyField()
 
     def set_payoffs(self):
@@ -51,6 +52,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    currentProgress=models.IntegerField()
     contribution = models.CurrencyField(
         min=0, max=Constants.endowment,
         doc="""The amount contributed by the player""",
