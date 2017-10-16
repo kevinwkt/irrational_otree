@@ -5,7 +5,7 @@ from .models import Constants
 
 
 class Introduction(Page):
-     def vars_for_template(self):
+    def vars_for_template(self):
         return {'prog': 25}
     currentProgress=0
     """Description of the game: How to play and returns expected"""
