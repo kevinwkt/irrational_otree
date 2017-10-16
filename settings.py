@@ -10,6 +10,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # the environment variable OTREE_PRODUCTION controls whether Django runs in
 # DEBUG mode. If OTREE_PRODUCTION==1, then DEBUG=False
+OTREE_PRODUCTION=1
+
 if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
     DEBUG = False
 else:
@@ -45,11 +47,11 @@ DATABASES = {
 #   of the admin interface, set it to DEMO.
 
 # for flexibility, you can set it in the environment variable OTREE_AUTH_LEVEL
-AUTH_LEVEL = environ.get('OTREE_AUTH_LEVEL')
+AUTH_LEVEL = 'STUDY'
 
-ADMIN_USERNAME = 'admin'
+ADMIN_USERNAME = 'irrational'
 # for security, best to set admin password in an environment variable
-ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
+ADMIN_PASSWORD = 'password'
 
 
 # setting for integration with AWS Mturk
@@ -58,36 +60,37 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'MXN'
 USE_POINTS = True
 
 
 
 # e.g. en, de, fr, it, ja, zh-hans
 # see: https://docs.djangoproject.com/en/1.9/topics/i18n/#term-language-code
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
 
 # SENTRY_DSN = ''
 
+DEMO_PAGE_TITLE="IRRATIONAL"
+
 DEMO_PAGE_INTRO_TEXT = """
 <ul>
     <li>
-        <a href="https://github.com/oTree-org/otree" target="_blank">
-            oTree on GitHub
-        </a>.
+        <a href="http://irrational.ly/" target="_blank">
+            Visita el sitio web de Irrational
+        </a>
     </li>
     <li>
         <a href="http://www.otree.org/" target="_blank">
-            oTree homepage
+            Página de oTree y la documentación
         </a>.
     </li>
 </ul>
 <p>
-    Here are various games implemented with oTree. These games are all open
-    source, and you can modify them as you wish.
+    Bienvenido a la plataforma de Behavioral Economics
 </p>
 """
 
