@@ -12,19 +12,19 @@
 {% block content %}
     <table class=table style="width: auto">
         <tr>
-            <th>You demanded</th>
+            <th>Tu pediste</th>
             <td>{{ player.request_amount }}</td>
         </tr>
         <tr>
-            <th>The other participant demanded</th>
+            <th>El otro participante pidió</th>
             <td>{{ player.other_player.request_amount }}</td>
         </tr>
         <tr>
-            <th>Sum of your demands</th>
+            <th>Suma de los pedidos</th>
             <td>{{ sum }}</td>
         </tr>
         <tr>
-            <th>Thus you earn</th>
+            <th>Por ende, obtienes</th>
             <td>{{ player.payoff }}</td>
         </tr>
     </table>

@@ -4,15 +4,15 @@
 {% block title %}
 {% include Constants.header_template %}
   <div class="w3-center">
-    Peticiones
+    Pedidos
   </div>
 {% endblock %}
 
 {% block content %}
 
-    <p>How much will you demand for yourself?</p>
+    <p>Cuanto quieres pedir?</p>
 
-    {% formfield player.request_amount with label="Please enter an amount from 0 to 100" %}
+    {% formfield player.request_amount with label="Porfavor ingrese un monto de 0 a 100" %}
 
     <p>{% next_button %}</p>
 

@@ -5,9 +5,9 @@ from otree.api import (
 import random
 
 doc = """
-This bargaining game involves 2 players. Each demands for a portion of some
-available amount. If the sum of demands is no larger than the available
-amount, both players get demanded portions. Otherwise, both get nothing.
+El "bargaining game" involucra 2 jugadores. Cada uno demanda una porción de un monto disponible.
+Si la suma de las demandas es menor que el monto disponible, ambos jugadores obtienen la porción demandada.
+En caso contrario, los dos jugadores obtienen nada.
 """
 
 
@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     instructions_template = 'bargaining/Instructions.html'
     header_template='global/header.html'
     footer_template='global/footer.html'
-    
+
     amount_shared = c(100)
 
 
@@ -42,11 +42,11 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     request_amount = models.CurrencyField(
         doc="""
-        Amount requested by this player.
+        Monto pedido por este jugador.
         """,
         min=0, max=Constants.amount_shared
     )
 
     def other_player(self):
-        """Returns the opponent of the current player"""
+        """Regresa el oponente del jugador actual"""
         return self.get_others_in_group()[0]
