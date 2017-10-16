@@ -35,14 +35,13 @@ class MyWaitPage(WaitPage):
 
 
 class Results(Page):
-    def vars_for_template(self):
-        return {'prog': 100}
     currentProgress=100
     """Payoff de los Jugadores: Ganancia de cada Jugador"""
 
     def vars_for_template(self):
         return {
             'total_earnings': self.group.total_contribution * Constants.multiplier,
+            'prog':100,
         }
 
 
