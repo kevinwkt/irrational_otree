@@ -6,7 +6,7 @@ from .models import Constants
 
 class Introduction(Page):
     currentProgress=0
-    """Description of the game: How to play and returns expected"""
+    """Descripción del juego: Cómo jugar y los returns requeridos"""
     pass
 
 
