@@ -74,17 +74,7 @@ INSTALLED_APPS = ['otree']
 
 SENTRY_DSN = 'http://68658e4656334cd2ae2dd7512af64601:012f49dc25504d8b83e1a318b85a7b9a@sentry.otree.org/218'
 
-DEMO_PAGE_TITLE="""
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="IRRATIONAL" src="{% static "global/logo4.jpg" %}" width="100%" height="208">
-      </a>
-    </div>
-  </div>
-</nav>
-"""
+DEMO_PAGE_TITLE="IRRATIONAL"
 
 DEMO_PAGE_INTRO_TEXT = """
 <ul>
